@@ -1,5 +1,5 @@
 #!/bin/bash
-#nginx 1.12.0 installation script.
+#nginx 1.13.0 installation script.
 
 yum -y install gcc automake autoconf libtool make
 yum -y install gcc gcc-c++
@@ -33,9 +33,9 @@ make install
 
 #install nginx
 cd /usr/local/src
-wget http://nginx.org/download/nginx-1.12.0.tar.gz
-tar -zxf nginx-1.12.0.tar.gz
-cd nginx-1.12.0
+wget http://nginx.org/download/nginx-1.13.0.tar.gz
+tar -zxf nginx-1.13.0.tar.gz
+cd nginx-1.13.0
 ./configure --sbin-path=/usr/local/nginx/nginx --conf-path=/usr/local/nginx/nginx.conf --pid-path=/usr/local/nginx/nginx.pid --with-http_ssl_module --with-pcre=/usr/local/src/pcre-8.40 --with-zlib=/usr/local/src/zlib-1.2.11 --with-openssl=/usr/local/src/openssl-1.1.0e
 make
 make install
