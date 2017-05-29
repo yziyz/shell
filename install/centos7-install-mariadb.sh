@@ -1,8 +1,8 @@
 #!/bin/bash
-#MariaDB-10.1.21 installation scropt.
+#MariaDB-10.2.6 installation scropt.
 
 #Create repo file
-echo -e "[mariadb]\nname = MariaDB\nbaseurl = https://mirrors.tuna.tsinghua.edu.cn/mariadb/mariadb-10.1.21/yum/centos7-amd64/\ngpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB\ngpgcheck=1" > temp
+echo -e "[mariadb]\nname = MariaDB\nbaseurl = https://mirrors.tuna.tsinghua.edu.cn/mariadb/mariadb-10.2.6/yum/centos7-amd64/\ngpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB\ngpgcheck=1" > temp
 sudo cp temp /etc/yum.repos.d/MariaDB.repo
 rm temp
 #Make cache
