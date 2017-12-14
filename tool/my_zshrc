@@ -1,0 +1,22 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/yuanzhen/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+# 命令提示符
+autoload -U promptinit
+promptinit
+prompt fire
+#ls别名
+alias ls='ls --color=auto'
+#终端标题
+precmd() {echo -ne "\033]0;$PWD\a\007"}
+#单词跳转
+bindkey ";5C" forward-word
+bindkey ";5D" backward-word
