@@ -29,12 +29,10 @@ function restart() {
     if [[ ${pid} == "" ]]
     then
         start
-        exit 0
     else
         stop
         sleep 10
         start
-        exit 0
     fi
 }
 
@@ -56,7 +54,7 @@ function stop() {
 
 #判断JAR文件是否存在
 function check_jar() {
-    if [ ! -e "$JAR_PATH" ]
+    if [ ! -e ${JAR_PATH} ]
     then
         #若不存在，报错并退出
         echo -e "错误：文件 ${JAR_PATH} 不存在"
