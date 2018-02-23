@@ -52,6 +52,9 @@ function stop() {
             "linux-gnu" | "darwin" | "freebsd")
                 kill ${pid}
             ;;
+            *)
+            echo "错误：未知操作系统类型"
+            exit 1
         esac
     fi
 }
@@ -72,17 +75,18 @@ cd ${WORK_PATH}
 #判断JAR文件是否存在
 check_jar
 #判断参数
-if [[ $1 == "start" ]]
-then
+case $1 in
+    "start")
     start
-elif [[ $1 == "restart" ]]
-then
-    restart
-elif [[ $1 == "stop" ]]
-then
+    ;;
+    "stop")
     stop
-else
+    ;;
+    "restart")
+    restart
+    ;;
+    *)
     echo -e "参数：\n    start - 运行\n    restart - 重启\n    stop - 停止\n"
-    exit 1
-fi
+    ;;
+esac
 exit 0
