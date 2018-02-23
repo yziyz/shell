@@ -45,10 +45,14 @@ function stop() {
         exit 1
     else
         echo -e "停止，杀死进程${pid}"
-        #若为WINDOWS
-        taskkill //pid ${pid} //f //t > /dev/null
-        #若为Linux
-        #kill ${pid}
+        case ${OSTYPE} in
+            "cygwin" | "msys" | "win32")
+                taskkill //pid ${pid} //f //t > /dev/null
+            ;;
+            "linux-gnu" | "darwin" | "freebsd")
+                kill ${pid}
+            ;;
+        esac
     fi
 }
 
