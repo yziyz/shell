@@ -12,11 +12,13 @@ compinit
 # 命令提示符
 autoload -U promptinit
 promptinit
-prompt fire
+prompt adam1
 #ls别名
 alias ls='ls --color=auto'
+alias ll='ls -l --color=auto'
+alias now='date +%Y年%m月%d日%H时%m分%S秒'
 #终端标题
 precmd() {echo -ne "\033]0;$PWD\a\007"}
 #单词跳转
-bindkey ";5C" forward-word
-bindkey ";5D" backward-word
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
