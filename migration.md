@@ -5,11 +5,11 @@
 
 ### 1.1 下载二进制文件
 
-在能够访问https://download.docker.com的主机下载，执行命令：
+在能够访问`https://download.docker.com`的主机下载，执行命令：
 ```
 $ wget https://download.docker.com/linux/static/stable/x86_64/docker-18.03.1-ce.tgz
 ```
-> 此处的`docker-18.03.1-ce.tgz`为18.03.1版本的二进制文件，若需要下载其他版本，可以查看https://download.docker.com/linux/static/stable/x86_64/
+> 此处的`docker-18.03.1-ce.tgz`为18.03.1版本的二进制文件，若需要下载其他版本，可以查看`https://download.docker.com/linux/static/stable/x86_64/`
 
 解压，执行命令：
 ```
@@ -134,7 +134,7 @@ $ sudo chmod +r data_20180601_153644.tgz
 ```
 > 注：压缩包文件名称里包含了创建时间，请根据实际情况修改命令，下同
 
-### 2.2 获取数据文件
+### 2.2 获取数据打包
 > 在目的主机上操作
 
 获取数据文件，执行命令：
@@ -151,7 +151,6 @@ $ tar zxf data_20180601_153644.tgz
 ```
 $ sudo mv home/* /home/
 ```
-
 
 ## 3 迁移容器
 
